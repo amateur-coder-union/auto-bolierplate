@@ -10,7 +10,7 @@ module.exports = [
   {
     input: resolveFile('src/index.ts'),
     output: {
-      file: resolveFile('dist/index.js'),
+      file: resolveFile('dist/main.js'),
       format: 'iife',
       name: 'helloworld',
     }, 
