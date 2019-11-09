@@ -1,9 +1,9 @@
-import { a } from './a';
+import app from './core/app';
 
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+/** 初始化函数 */
+function initReq() {
+  auto(); // 确认权限
+}
 
-(async () => {
-  console.show();
-  await delay(1200);
-  console.log(`a = ${a}`);
-})();
+initReq();
+app.start();
