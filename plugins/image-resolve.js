@@ -4,11 +4,13 @@ const {
   createWriteStream,
   existsSync,
   mkdirSync,
-} = require('fs');
+  removeSync
+} = require('fs-extra');
 
 module.exports = (opt = {}) => {
   const extensions = opt.extensions || /\.(png|jpg|jpeg|gif|svg)$/;
-
+  console.log(process.env.IS_PROD);
+  if (process.env.IS_PROD) removeSync('./dist/assets');
   return {
     name: 'image-resolver',
 

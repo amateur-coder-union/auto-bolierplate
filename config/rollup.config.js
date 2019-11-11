@@ -16,8 +16,6 @@ module.exports = [
       file: resolveFile('dist/main.js'),
       format: 'cjs',
     },
-    preferBuiltins: true,
     plugins: [typescript(), imagex(), resolve(), commonjs(), buble()],
-    external: [ 'fs', 'path' ]
   },
 ];

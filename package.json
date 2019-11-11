@@ -4,12 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c ./config/rollup.config.prod.js",
-    "dev": "rollup -w -c ./config/rollup.config.dev.js"
+    "build": "IS_PROD=true rollup -c ./config/rollup.config.prod.js",
+    "dev": "rollup -w -c ./config/rollup.config.dev.js",
+    "scap": "adb exec-out screencap -p > `date '+%Y%m%d%H%M%S'`.png",
+    "scap7": "adb shell screencap -p > `date '+%Y%m%d%H%M%S'`.png"
   },
   "devDependencies": {
     "@types/node": "^12.12.6",
     "autojs-dev": "^0.7.1",
+    "fs-extra": "^8.1.0",
     "rollup": "^1.26.3",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
