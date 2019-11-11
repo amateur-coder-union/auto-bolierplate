@@ -47,3 +47,26 @@ adb shell screencap -p > `date '+%Y%m%d%H%M%S'`.png
 3. dist 的内容复制进项目文件夹下面，无脑覆盖（一般只会有 assets + main.js）
 4. 修改 project.json, [隐藏主界面](https://easydoc.xyz/#/doc/25791054/uw2FUUiw/KYYtRplN)。
 5. 回到 autojs，项目选择打包。
+
+## TODO
+
+- 调研使用 xml 记录 layout 的可能性.（可行，待做）
+
+x.xml
+
+```xml
+<frame gravity="center">
+  <text id="text">悬浮文字</text>
+</frame>
+```
+
+main.js
+
+```js
+const layout = files.read('./layout/x.xml');
+const w = floaty.rawWindow(layout);
+
+setTimeout(() => {
+  w.close();
+}, 6000);
+```
